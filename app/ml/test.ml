@@ -6,7 +6,7 @@ let create_paragraph str =
   p
 
 let on_device_ready _ =
-  let f = File_cordova.t () in
+  let f = Cordova_file.t () in
   Dom.appendChild doc##.body (create_paragraph (f#application_directory));
   Dom.appendChild doc##.body (create_paragraph (f#application_storage_directory));
   Dom.appendChild doc##.body (create_paragraph (f#data_directory));
