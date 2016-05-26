@@ -18,9 +18,7 @@ let on_device_ready _ =
   Dom.appendChild doc##.body (create_paragraph (f#temp_directory));
   Dom.appendChild doc##.body (create_paragraph (f#synced_data_directory));
   Dom.appendChild doc##.body (create_paragraph (f#documents_directory));
-  Dom.appendChild doc##.body (create_paragraph (f#shared_directory));
-  Js._false
+  Dom.appendChild doc##.body (create_paragraph (f#shared_directory))
 
 let _ =
-  Dom.addEventListener Dom_html.document (Dom.Event.make "deviceready")
-  (Dom_html.handler on_device_ready) Js._false
+  Cordova.Event.device_ready on_device_ready
